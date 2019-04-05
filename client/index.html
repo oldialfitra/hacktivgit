@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-client_id"
+        content="572571100704-gachmumjktlolciff6hi7qvdjc69j3fu.apps.googleusercontent.com">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,14 +21,25 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <h2>HacktivGit</h2>
+        <div class="col-sm-6">
+            <h2>HacktivGit</h2>
+        </div>
+        <div class="col-sm-6">
+            <div id="googleIn">
+                <div class="g-signin2 float-right" data-onsuccess="onSignIn"></div>
+            </div>
+            <div id="googleOut">
+                <a class="float-right" href="#" onclick="signOut();">Sign out</a>
+            </div>
+        </div>
     </nav>
     <div class="container">
-        <div class="sm-12 d-flex">
+        <div class="row container">
             <div class="bg-light col-sm-4 content border">
                 <h2> My Repositories </h2>
                 Add New Repository
@@ -36,7 +49,7 @@
                 <br>
                 <h3> List: </h3>
                 <ol id="myRepo">
-                    </0l>
+                </ol>
             </div>
 
             <div class="bg-light col-sm-4 content border">
@@ -50,7 +63,7 @@
                 <input type="text" id="username" placeholder="Username" onchange="otherRepos(this.value)">
                 <br>
                 <h3> List: </h3>
-                <ul id="otherRepo"> </ul>
+                <ol id="otherRepo"> </ol>
             </div>
         </div>
     </div>
